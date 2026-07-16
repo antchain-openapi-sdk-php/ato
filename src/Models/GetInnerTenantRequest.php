@@ -1,13 +1,51 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\ATO\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GetInnerTenantRequest extends Model
-{
+class GetInnerTenantRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'merchantTenantId' => 'merchant_tenant_id',
+    ];
+    public function validate() {
+        Model::validateRequired('merchantTenantId', $this->merchantTenantId, true);
+        Model::validateMaxLength('merchantTenantId', $this->merchantTenantId, 32);
+        Model::validateMinLength('merchantTenantId', $this->merchantTenantId, 1);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->merchantTenantId) {
+            $res['merchant_tenant_id'] = $this->merchantTenantId;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return GetInnerTenantRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['merchant_tenant_id'])){
+            $model->merchantTenantId = $map['merchant_tenant_id'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -24,53 +62,5 @@ class GetInnerTenantRequest extends Model
      * @var string
      */
     public $merchantTenantId;
-    protected $_name = [
-        'authToken'         => 'auth_token',
-        'productInstanceId' => 'product_instance_id',
-        'merchantTenantId'  => 'merchant_tenant_id',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('merchantTenantId', $this->merchantTenantId, true);
-        Model::validateMaxLength('merchantTenantId', $this->merchantTenantId, 32);
-        Model::validateMinLength('merchantTenantId', $this->merchantTenantId, 1);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->merchantTenantId) {
-            $res['merchant_tenant_id'] = $this->merchantTenantId;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return GetInnerTenantRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['merchant_tenant_id'])) {
-            $model->merchantTenantId = $map['merchant_tenant_id'];
-        }
-
-        return $model;
-    }
 }

@@ -1,13 +1,75 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\ATO\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class PagequeryInnerMerchantexpandsummaryResponse extends Model
-{
+use AntChain\ATO\Models\MerchantExpandSummaryPage;
+
+class PagequeryInnerMerchantexpandsummaryResponse extends Model {
+    protected $_name = [
+        'reqMsgId' => 'req_msg_id',
+        'resultCode' => 'result_code',
+        'resultMsg' => 'result_msg',
+        'total' => 'total',
+        'merchantExpandSummaryPage' => 'merchant_expand_summary_page',
+    ];
+    public function validate() {}
+    public function toMap() {
+        $res = [];
+        if (null !== $this->reqMsgId) {
+            $res['req_msg_id'] = $this->reqMsgId;
+        }
+        if (null !== $this->resultCode) {
+            $res['result_code'] = $this->resultCode;
+        }
+        if (null !== $this->resultMsg) {
+            $res['result_msg'] = $this->resultMsg;
+        }
+        if (null !== $this->total) {
+            $res['total'] = $this->total;
+        }
+        if (null !== $this->merchantExpandSummaryPage) {
+            $res['merchant_expand_summary_page'] = [];
+            if(null !== $this->merchantExpandSummaryPage && is_array($this->merchantExpandSummaryPage)){
+                $n = 0;
+                foreach($this->merchantExpandSummaryPage as $item){
+                    $res['merchant_expand_summary_page'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return PagequeryInnerMerchantexpandsummaryResponse
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['req_msg_id'])){
+            $model->reqMsgId = $map['req_msg_id'];
+        }
+        if(isset($map['result_code'])){
+            $model->resultCode = $map['result_code'];
+        }
+        if(isset($map['result_msg'])){
+            $model->resultMsg = $map['result_msg'];
+        }
+        if(isset($map['total'])){
+            $model->total = $map['total'];
+        }
+        if(isset($map['merchant_expand_summary_page'])){
+            if(!empty($map['merchant_expand_summary_page'])){
+                $model->merchantExpandSummaryPage = [];
+                $n = 0;
+                foreach($map['merchant_expand_summary_page'] as $item) {
+                    $model->merchantExpandSummaryPage[$n++] = null !== $item ? MerchantExpandSummaryPage::fromMap($item) : $item;
+                }
+            }
+        }
+        return $model;
+    }
     // 请求唯一ID，用于链路跟踪和问题排查
     /**
      * @var string
@@ -37,76 +99,5 @@ class PagequeryInnerMerchantexpandsummaryResponse extends Model
      * @var MerchantExpandSummaryPage[]
      */
     public $merchantExpandSummaryPage;
-    protected $_name = [
-        'reqMsgId'                  => 'req_msg_id',
-        'resultCode'                => 'result_code',
-        'resultMsg'                 => 'result_msg',
-        'total'                     => 'total',
-        'merchantExpandSummaryPage' => 'merchant_expand_summary_page',
-    ];
 
-    public function validate()
-    {
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->reqMsgId) {
-            $res['req_msg_id'] = $this->reqMsgId;
-        }
-        if (null !== $this->resultCode) {
-            $res['result_code'] = $this->resultCode;
-        }
-        if (null !== $this->resultMsg) {
-            $res['result_msg'] = $this->resultMsg;
-        }
-        if (null !== $this->total) {
-            $res['total'] = $this->total;
-        }
-        if (null !== $this->merchantExpandSummaryPage) {
-            $res['merchant_expand_summary_page'] = [];
-            if (null !== $this->merchantExpandSummaryPage && \is_array($this->merchantExpandSummaryPage)) {
-                $n = 0;
-                foreach ($this->merchantExpandSummaryPage as $item) {
-                    $res['merchant_expand_summary_page'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return PagequeryInnerMerchantexpandsummaryResponse
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['req_msg_id'])) {
-            $model->reqMsgId = $map['req_msg_id'];
-        }
-        if (isset($map['result_code'])) {
-            $model->resultCode = $map['result_code'];
-        }
-        if (isset($map['result_msg'])) {
-            $model->resultMsg = $map['result_msg'];
-        }
-        if (isset($map['total'])) {
-            $model->total = $map['total'];
-        }
-        if (isset($map['merchant_expand_summary_page'])) {
-            if (!empty($map['merchant_expand_summary_page'])) {
-                $model->merchantExpandSummaryPage = [];
-                $n                                = 0;
-                foreach ($map['merchant_expand_summary_page'] as $item) {
-                    $model->merchantExpandSummaryPage[$n++] = null !== $item ? MerchantExpandSummaryPage::fromMap($item) : $item;
-                }
-            }
-        }
-
-        return $model;
-    }
 }

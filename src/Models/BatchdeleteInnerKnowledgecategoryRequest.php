@@ -1,51 +1,22 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\ATO\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class BatchdeleteInnerKnowledgecategoryRequest extends Model
-{
-    // OAuth模式下的授权token
-    /**
-     * @var string
-     */
-    public $authToken;
-
-    /**
-     * @var string
-     */
-    public $productInstanceId;
-
-    // 租户id
-    //
-    /**
-     * @var string
-     */
-    public $tenantId;
-
-    // 知识点数据库主键id数组
-    /**
-     * @var int[]
-     */
-    public $ids;
+class BatchdeleteInnerKnowledgecategoryRequest extends Model {
     protected $_name = [
-        'authToken'         => 'auth_token',
+        'authToken' => 'auth_token',
         'productInstanceId' => 'product_instance_id',
-        'tenantId'          => 'tenant_id',
-        'ids'               => 'ids',
+        'tenantId' => 'tenant_id',
+        'ids' => 'ids',
     ];
-
-    public function validate()
-    {
+    public function validate() {
         Model::validateRequired('tenantId', $this->tenantId, true);
         Model::validateRequired('ids', $this->ids, true);
     }
-
-    public function toMap()
-    {
+    public function toMap() {
         $res = [];
         if (null !== $this->authToken) {
             $res['auth_token'] = $this->authToken;
@@ -59,33 +30,52 @@ class BatchdeleteInnerKnowledgecategoryRequest extends Model
         if (null !== $this->ids) {
             $res['ids'] = $this->ids;
         }
-
         return $res;
     }
-
     /**
      * @param array $map
-     *
      * @return BatchdeleteInnerKnowledgecategoryRequest
      */
-    public static function fromMap($map = [])
-    {
+    public static function fromMap($map = []) {
         $model = new self();
-        if (isset($map['auth_token'])) {
+        if(isset($map['auth_token'])){
             $model->authToken = $map['auth_token'];
         }
-        if (isset($map['product_instance_id'])) {
+        if(isset($map['product_instance_id'])){
             $model->productInstanceId = $map['product_instance_id'];
         }
-        if (isset($map['tenant_id'])) {
+        if(isset($map['tenant_id'])){
             $model->tenantId = $map['tenant_id'];
         }
-        if (isset($map['ids'])) {
-            if (!empty($map['ids'])) {
+        if(isset($map['ids'])){
+            if(!empty($map['ids'])){
                 $model->ids = $map['ids'];
             }
         }
-
         return $model;
     }
+    // OAuth模式下的授权token
+    /**
+     * @var string
+     */
+    public $authToken;
+
+    /**
+     * @var string
+     */
+    public $productInstanceId;
+
+    // 租户id
+    // 
+    /**
+     * @var string
+     */
+    public $tenantId;
+
+    // 知识点数据库主键id数组
+    /**
+     * @var int[]
+     */
+    public $ids;
+
 }

@@ -1,13 +1,145 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\ATO\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class CreateInnerFundmngmerchantpromiseRequest extends Model
-{
+class CreateInnerFundmngmerchantpromiseRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'fundTenantId' => 'fund_tenant_id',
+        'tenantId' => 'tenant_id',
+        'orderId' => 'order_id',
+        'merchantId' => 'merchant_id',
+        'fundId' => 'fund_id',
+        'merchantPayType' => 'merchant_pay_type',
+        'merchantCompensateStartDay' => 'merchant_compensate_start_day',
+        'payStartTermIndex' => 'pay_start_term_index',
+        'divideAlipayUserId' => 'divide_alipay_user_id',
+        'divideAlipayLoginId' => 'divide_alipay_login_id',
+        'compensateAlipayUserId' => 'compensate_alipay_user_id',
+        'compensateAlipayLoginId' => 'compensate_alipay_login_id',
+        'traceId' => 'trace_id',
+    ];
+    public function validate() {
+        Model::validateRequired('fundTenantId', $this->fundTenantId, true);
+        Model::validateRequired('tenantId', $this->tenantId, true);
+        Model::validateRequired('orderId', $this->orderId, true);
+        Model::validateRequired('merchantId', $this->merchantId, true);
+        Model::validateRequired('fundId', $this->fundId, true);
+        Model::validateRequired('merchantPayType', $this->merchantPayType, true);
+        Model::validateRequired('merchantCompensateStartDay', $this->merchantCompensateStartDay, true);
+        Model::validateRequired('payStartTermIndex', $this->payStartTermIndex, true);
+        Model::validateRequired('divideAlipayUserId', $this->divideAlipayUserId, true);
+        Model::validateRequired('divideAlipayLoginId', $this->divideAlipayLoginId, true);
+        Model::validateRequired('compensateAlipayUserId', $this->compensateAlipayUserId, true);
+        Model::validateRequired('compensateAlipayLoginId', $this->compensateAlipayLoginId, true);
+        Model::validateRequired('traceId', $this->traceId, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->fundTenantId) {
+            $res['fund_tenant_id'] = $this->fundTenantId;
+        }
+        if (null !== $this->tenantId) {
+            $res['tenant_id'] = $this->tenantId;
+        }
+        if (null !== $this->orderId) {
+            $res['order_id'] = $this->orderId;
+        }
+        if (null !== $this->merchantId) {
+            $res['merchant_id'] = $this->merchantId;
+        }
+        if (null !== $this->fundId) {
+            $res['fund_id'] = $this->fundId;
+        }
+        if (null !== $this->merchantPayType) {
+            $res['merchant_pay_type'] = $this->merchantPayType;
+        }
+        if (null !== $this->merchantCompensateStartDay) {
+            $res['merchant_compensate_start_day'] = $this->merchantCompensateStartDay;
+        }
+        if (null !== $this->payStartTermIndex) {
+            $res['pay_start_term_index'] = $this->payStartTermIndex;
+        }
+        if (null !== $this->divideAlipayUserId) {
+            $res['divide_alipay_user_id'] = $this->divideAlipayUserId;
+        }
+        if (null !== $this->divideAlipayLoginId) {
+            $res['divide_alipay_login_id'] = $this->divideAlipayLoginId;
+        }
+        if (null !== $this->compensateAlipayUserId) {
+            $res['compensate_alipay_user_id'] = $this->compensateAlipayUserId;
+        }
+        if (null !== $this->compensateAlipayLoginId) {
+            $res['compensate_alipay_login_id'] = $this->compensateAlipayLoginId;
+        }
+        if (null !== $this->traceId) {
+            $res['trace_id'] = $this->traceId;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return CreateInnerFundmngmerchantpromiseRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['fund_tenant_id'])){
+            $model->fundTenantId = $map['fund_tenant_id'];
+        }
+        if(isset($map['tenant_id'])){
+            $model->tenantId = $map['tenant_id'];
+        }
+        if(isset($map['order_id'])){
+            $model->orderId = $map['order_id'];
+        }
+        if(isset($map['merchant_id'])){
+            $model->merchantId = $map['merchant_id'];
+        }
+        if(isset($map['fund_id'])){
+            $model->fundId = $map['fund_id'];
+        }
+        if(isset($map['merchant_pay_type'])){
+            $model->merchantPayType = $map['merchant_pay_type'];
+        }
+        if(isset($map['merchant_compensate_start_day'])){
+            $model->merchantCompensateStartDay = $map['merchant_compensate_start_day'];
+        }
+        if(isset($map['pay_start_term_index'])){
+            $model->payStartTermIndex = $map['pay_start_term_index'];
+        }
+        if(isset($map['divide_alipay_user_id'])){
+            $model->divideAlipayUserId = $map['divide_alipay_user_id'];
+        }
+        if(isset($map['divide_alipay_login_id'])){
+            $model->divideAlipayLoginId = $map['divide_alipay_login_id'];
+        }
+        if(isset($map['compensate_alipay_user_id'])){
+            $model->compensateAlipayUserId = $map['compensate_alipay_user_id'];
+        }
+        if(isset($map['compensate_alipay_login_id'])){
+            $model->compensateAlipayLoginId = $map['compensate_alipay_login_id'];
+        }
+        if(isset($map['trace_id'])){
+            $model->traceId = $map['trace_id'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -98,147 +230,5 @@ class CreateInnerFundmngmerchantpromiseRequest extends Model
      * @var string
      */
     public $traceId;
-    protected $_name = [
-        'authToken'                  => 'auth_token',
-        'productInstanceId'          => 'product_instance_id',
-        'fundTenantId'               => 'fund_tenant_id',
-        'tenantId'                   => 'tenant_id',
-        'orderId'                    => 'order_id',
-        'merchantId'                 => 'merchant_id',
-        'fundId'                     => 'fund_id',
-        'merchantPayType'            => 'merchant_pay_type',
-        'merchantCompensateStartDay' => 'merchant_compensate_start_day',
-        'payStartTermIndex'          => 'pay_start_term_index',
-        'divideAlipayUserId'         => 'divide_alipay_user_id',
-        'divideAlipayLoginId'        => 'divide_alipay_login_id',
-        'compensateAlipayUserId'     => 'compensate_alipay_user_id',
-        'compensateAlipayLoginId'    => 'compensate_alipay_login_id',
-        'traceId'                    => 'trace_id',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('fundTenantId', $this->fundTenantId, true);
-        Model::validateRequired('tenantId', $this->tenantId, true);
-        Model::validateRequired('orderId', $this->orderId, true);
-        Model::validateRequired('merchantId', $this->merchantId, true);
-        Model::validateRequired('fundId', $this->fundId, true);
-        Model::validateRequired('merchantPayType', $this->merchantPayType, true);
-        Model::validateRequired('merchantCompensateStartDay', $this->merchantCompensateStartDay, true);
-        Model::validateRequired('payStartTermIndex', $this->payStartTermIndex, true);
-        Model::validateRequired('divideAlipayUserId', $this->divideAlipayUserId, true);
-        Model::validateRequired('divideAlipayLoginId', $this->divideAlipayLoginId, true);
-        Model::validateRequired('compensateAlipayUserId', $this->compensateAlipayUserId, true);
-        Model::validateRequired('compensateAlipayLoginId', $this->compensateAlipayLoginId, true);
-        Model::validateRequired('traceId', $this->traceId, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->fundTenantId) {
-            $res['fund_tenant_id'] = $this->fundTenantId;
-        }
-        if (null !== $this->tenantId) {
-            $res['tenant_id'] = $this->tenantId;
-        }
-        if (null !== $this->orderId) {
-            $res['order_id'] = $this->orderId;
-        }
-        if (null !== $this->merchantId) {
-            $res['merchant_id'] = $this->merchantId;
-        }
-        if (null !== $this->fundId) {
-            $res['fund_id'] = $this->fundId;
-        }
-        if (null !== $this->merchantPayType) {
-            $res['merchant_pay_type'] = $this->merchantPayType;
-        }
-        if (null !== $this->merchantCompensateStartDay) {
-            $res['merchant_compensate_start_day'] = $this->merchantCompensateStartDay;
-        }
-        if (null !== $this->payStartTermIndex) {
-            $res['pay_start_term_index'] = $this->payStartTermIndex;
-        }
-        if (null !== $this->divideAlipayUserId) {
-            $res['divide_alipay_user_id'] = $this->divideAlipayUserId;
-        }
-        if (null !== $this->divideAlipayLoginId) {
-            $res['divide_alipay_login_id'] = $this->divideAlipayLoginId;
-        }
-        if (null !== $this->compensateAlipayUserId) {
-            $res['compensate_alipay_user_id'] = $this->compensateAlipayUserId;
-        }
-        if (null !== $this->compensateAlipayLoginId) {
-            $res['compensate_alipay_login_id'] = $this->compensateAlipayLoginId;
-        }
-        if (null !== $this->traceId) {
-            $res['trace_id'] = $this->traceId;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return CreateInnerFundmngmerchantpromiseRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['fund_tenant_id'])) {
-            $model->fundTenantId = $map['fund_tenant_id'];
-        }
-        if (isset($map['tenant_id'])) {
-            $model->tenantId = $map['tenant_id'];
-        }
-        if (isset($map['order_id'])) {
-            $model->orderId = $map['order_id'];
-        }
-        if (isset($map['merchant_id'])) {
-            $model->merchantId = $map['merchant_id'];
-        }
-        if (isset($map['fund_id'])) {
-            $model->fundId = $map['fund_id'];
-        }
-        if (isset($map['merchant_pay_type'])) {
-            $model->merchantPayType = $map['merchant_pay_type'];
-        }
-        if (isset($map['merchant_compensate_start_day'])) {
-            $model->merchantCompensateStartDay = $map['merchant_compensate_start_day'];
-        }
-        if (isset($map['pay_start_term_index'])) {
-            $model->payStartTermIndex = $map['pay_start_term_index'];
-        }
-        if (isset($map['divide_alipay_user_id'])) {
-            $model->divideAlipayUserId = $map['divide_alipay_user_id'];
-        }
-        if (isset($map['divide_alipay_login_id'])) {
-            $model->divideAlipayLoginId = $map['divide_alipay_login_id'];
-        }
-        if (isset($map['compensate_alipay_user_id'])) {
-            $model->compensateAlipayUserId = $map['compensate_alipay_user_id'];
-        }
-        if (isset($map['compensate_alipay_login_id'])) {
-            $model->compensateAlipayLoginId = $map['compensate_alipay_login_id'];
-        }
-        if (isset($map['trace_id'])) {
-            $model->traceId = $map['trace_id'];
-        }
-
-        return $model;
-    }
 }

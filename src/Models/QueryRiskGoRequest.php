@@ -1,13 +1,211 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\ATO\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryRiskGoRequest extends Model
-{
+use AntChain\ATO\Models\PurchaseQueryModel;
+use AntChain\ATO\Models\ScalperQueryModel;
+use AntChain\ATO\Models\AwardingQueryModel;
+use AntChain\ATO\Models\FarmingQueryModel;
+use AntChain\ATO\Models\BaddebtQueryModel;
+
+class QueryRiskGoRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'riskType' => 'risk_type',
+        'flowId' => 'flow_id',
+        'businessCode' => 'business_code',
+        'scene' => 'scene',
+        'userId' => 'user_id',
+        'openId' => 'open_id',
+        'merPid' => 'mer_pid',
+        'mobileNo' => 'mobile_no',
+        'certNo' => 'cert_no',
+        'ip' => 'ip',
+        'lbs' => 'lbs',
+        'role' => 'role',
+        'activityInfo' => 'activity_info',
+        'purchaseQueryModel' => 'purchase_query_model',
+        'scalperQueryModel' => 'scalper_query_model',
+        'awardingQueryModel' => 'awarding_query_model',
+        'farmingQueryModel' => 'farming_query_model',
+        'baddebtQueryModel' => 'baddebt_query_model',
+        'merchantAppId' => 'merchant_app_id',
+    ];
+    public function validate() {
+        Model::validateRequired('riskType', $this->riskType, true);
+        Model::validateRequired('flowId', $this->flowId, true);
+        Model::validateRequired('businessCode', $this->businessCode, true);
+        Model::validateRequired('scene', $this->scene, true);
+        Model::validateMaxLength('riskType', $this->riskType, 50);
+        Model::validateMaxLength('flowId', $this->flowId, 32);
+        Model::validateMaxLength('businessCode', $this->businessCode, 30);
+        Model::validateMaxLength('scene', $this->scene, 50);
+        Model::validateMaxLength('userId', $this->userId, 50);
+        Model::validateMaxLength('openId', $this->openId, 128);
+        Model::validateMaxLength('merPid', $this->merPid, 50);
+        Model::validateMaxLength('mobileNo', $this->mobileNo, 50);
+        Model::validateMaxLength('certNo', $this->certNo, 50);
+        Model::validateMaxLength('ip', $this->ip, 32);
+        Model::validateMaxLength('lbs', $this->lbs, 50);
+        Model::validateMaxLength('role', $this->role, 128);
+        Model::validateMaxLength('activityInfo', $this->activityInfo, 100);
+        Model::validateMinLength('riskType', $this->riskType, 1);
+        Model::validateMinLength('flowId', $this->flowId, 10);
+        Model::validateMinLength('businessCode', $this->businessCode, 1);
+        Model::validateMinLength('scene', $this->scene, 1);
+        Model::validateMinLength('userId', $this->userId, 1);
+        Model::validateMinLength('openId', $this->openId, 1);
+        Model::validateMinLength('merPid', $this->merPid, 1);
+        Model::validateMinLength('mobileNo', $this->mobileNo, 1);
+        Model::validateMinLength('certNo', $this->certNo, 1);
+        Model::validateMinLength('ip', $this->ip, 1);
+        Model::validateMinLength('lbs', $this->lbs, 1);
+        Model::validateMinLength('role', $this->role, 1);
+        Model::validateMinLength('activityInfo', $this->activityInfo, 1);
+        Model::validateMinLength('merchantAppId', $this->merchantAppId, 1);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->riskType) {
+            $res['risk_type'] = $this->riskType;
+        }
+        if (null !== $this->flowId) {
+            $res['flow_id'] = $this->flowId;
+        }
+        if (null !== $this->businessCode) {
+            $res['business_code'] = $this->businessCode;
+        }
+        if (null !== $this->scene) {
+            $res['scene'] = $this->scene;
+        }
+        if (null !== $this->userId) {
+            $res['user_id'] = $this->userId;
+        }
+        if (null !== $this->openId) {
+            $res['open_id'] = $this->openId;
+        }
+        if (null !== $this->merPid) {
+            $res['mer_pid'] = $this->merPid;
+        }
+        if (null !== $this->mobileNo) {
+            $res['mobile_no'] = $this->mobileNo;
+        }
+        if (null !== $this->certNo) {
+            $res['cert_no'] = $this->certNo;
+        }
+        if (null !== $this->ip) {
+            $res['ip'] = $this->ip;
+        }
+        if (null !== $this->lbs) {
+            $res['lbs'] = $this->lbs;
+        }
+        if (null !== $this->role) {
+            $res['role'] = $this->role;
+        }
+        if (null !== $this->activityInfo) {
+            $res['activity_info'] = $this->activityInfo;
+        }
+        if (null !== $this->purchaseQueryModel) {
+            $res['purchase_query_model'] = null !== $this->purchaseQueryModel ? $this->purchaseQueryModel->toMap() : null;
+        }
+        if (null !== $this->scalperQueryModel) {
+            $res['scalper_query_model'] = null !== $this->scalperQueryModel ? $this->scalperQueryModel->toMap() : null;
+        }
+        if (null !== $this->awardingQueryModel) {
+            $res['awarding_query_model'] = null !== $this->awardingQueryModel ? $this->awardingQueryModel->toMap() : null;
+        }
+        if (null !== $this->farmingQueryModel) {
+            $res['farming_query_model'] = null !== $this->farmingQueryModel ? $this->farmingQueryModel->toMap() : null;
+        }
+        if (null !== $this->baddebtQueryModel) {
+            $res['baddebt_query_model'] = null !== $this->baddebtQueryModel ? $this->baddebtQueryModel->toMap() : null;
+        }
+        if (null !== $this->merchantAppId) {
+            $res['merchant_app_id'] = $this->merchantAppId;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return QueryRiskGoRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['risk_type'])){
+            $model->riskType = $map['risk_type'];
+        }
+        if(isset($map['flow_id'])){
+            $model->flowId = $map['flow_id'];
+        }
+        if(isset($map['business_code'])){
+            $model->businessCode = $map['business_code'];
+        }
+        if(isset($map['scene'])){
+            $model->scene = $map['scene'];
+        }
+        if(isset($map['user_id'])){
+            $model->userId = $map['user_id'];
+        }
+        if(isset($map['open_id'])){
+            $model->openId = $map['open_id'];
+        }
+        if(isset($map['mer_pid'])){
+            $model->merPid = $map['mer_pid'];
+        }
+        if(isset($map['mobile_no'])){
+            $model->mobileNo = $map['mobile_no'];
+        }
+        if(isset($map['cert_no'])){
+            $model->certNo = $map['cert_no'];
+        }
+        if(isset($map['ip'])){
+            $model->ip = $map['ip'];
+        }
+        if(isset($map['lbs'])){
+            $model->lbs = $map['lbs'];
+        }
+        if(isset($map['role'])){
+            $model->role = $map['role'];
+        }
+        if(isset($map['activity_info'])){
+            $model->activityInfo = $map['activity_info'];
+        }
+        if(isset($map['purchase_query_model'])){
+            $model->purchaseQueryModel = PurchaseQueryModel::fromMap($map['purchase_query_model']);
+        }
+        if(isset($map['scalper_query_model'])){
+            $model->scalperQueryModel = ScalperQueryModel::fromMap($map['scalper_query_model']);
+        }
+        if(isset($map['awarding_query_model'])){
+            $model->awardingQueryModel = AwardingQueryModel::fromMap($map['awarding_query_model']);
+        }
+        if(isset($map['farming_query_model'])){
+            $model->farmingQueryModel = FarmingQueryModel::fromMap($map['farming_query_model']);
+        }
+        if(isset($map['baddebt_query_model'])){
+            $model->baddebtQueryModel = BaddebtQueryModel::fromMap($map['baddebt_query_model']);
+        }
+        if(isset($map['merchant_app_id'])){
+            $model->merchantAppId = $map['merchant_app_id'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -134,207 +332,5 @@ class QueryRiskGoRequest extends Model
      * @var string
      */
     public $merchantAppId;
-    protected $_name = [
-        'authToken'          => 'auth_token',
-        'productInstanceId'  => 'product_instance_id',
-        'riskType'           => 'risk_type',
-        'flowId'             => 'flow_id',
-        'businessCode'       => 'business_code',
-        'scene'              => 'scene',
-        'userId'             => 'user_id',
-        'openId'             => 'open_id',
-        'merPid'             => 'mer_pid',
-        'mobileNo'           => 'mobile_no',
-        'certNo'             => 'cert_no',
-        'ip'                 => 'ip',
-        'lbs'                => 'lbs',
-        'role'               => 'role',
-        'activityInfo'       => 'activity_info',
-        'purchaseQueryModel' => 'purchase_query_model',
-        'scalperQueryModel'  => 'scalper_query_model',
-        'awardingQueryModel' => 'awarding_query_model',
-        'farmingQueryModel'  => 'farming_query_model',
-        'baddebtQueryModel'  => 'baddebt_query_model',
-        'merchantAppId'      => 'merchant_app_id',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('riskType', $this->riskType, true);
-        Model::validateRequired('flowId', $this->flowId, true);
-        Model::validateRequired('businessCode', $this->businessCode, true);
-        Model::validateRequired('scene', $this->scene, true);
-        Model::validateMaxLength('riskType', $this->riskType, 50);
-        Model::validateMaxLength('flowId', $this->flowId, 32);
-        Model::validateMaxLength('businessCode', $this->businessCode, 30);
-        Model::validateMaxLength('scene', $this->scene, 50);
-        Model::validateMaxLength('userId', $this->userId, 50);
-        Model::validateMaxLength('openId', $this->openId, 128);
-        Model::validateMaxLength('merPid', $this->merPid, 50);
-        Model::validateMaxLength('mobileNo', $this->mobileNo, 50);
-        Model::validateMaxLength('certNo', $this->certNo, 50);
-        Model::validateMaxLength('ip', $this->ip, 32);
-        Model::validateMaxLength('lbs', $this->lbs, 50);
-        Model::validateMaxLength('role', $this->role, 128);
-        Model::validateMaxLength('activityInfo', $this->activityInfo, 100);
-        Model::validateMinLength('riskType', $this->riskType, 1);
-        Model::validateMinLength('flowId', $this->flowId, 10);
-        Model::validateMinLength('businessCode', $this->businessCode, 1);
-        Model::validateMinLength('scene', $this->scene, 1);
-        Model::validateMinLength('userId', $this->userId, 1);
-        Model::validateMinLength('openId', $this->openId, 1);
-        Model::validateMinLength('merPid', $this->merPid, 1);
-        Model::validateMinLength('mobileNo', $this->mobileNo, 1);
-        Model::validateMinLength('certNo', $this->certNo, 1);
-        Model::validateMinLength('ip', $this->ip, 1);
-        Model::validateMinLength('lbs', $this->lbs, 1);
-        Model::validateMinLength('role', $this->role, 1);
-        Model::validateMinLength('activityInfo', $this->activityInfo, 1);
-        Model::validateMinLength('merchantAppId', $this->merchantAppId, 1);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->riskType) {
-            $res['risk_type'] = $this->riskType;
-        }
-        if (null !== $this->flowId) {
-            $res['flow_id'] = $this->flowId;
-        }
-        if (null !== $this->businessCode) {
-            $res['business_code'] = $this->businessCode;
-        }
-        if (null !== $this->scene) {
-            $res['scene'] = $this->scene;
-        }
-        if (null !== $this->userId) {
-            $res['user_id'] = $this->userId;
-        }
-        if (null !== $this->openId) {
-            $res['open_id'] = $this->openId;
-        }
-        if (null !== $this->merPid) {
-            $res['mer_pid'] = $this->merPid;
-        }
-        if (null !== $this->mobileNo) {
-            $res['mobile_no'] = $this->mobileNo;
-        }
-        if (null !== $this->certNo) {
-            $res['cert_no'] = $this->certNo;
-        }
-        if (null !== $this->ip) {
-            $res['ip'] = $this->ip;
-        }
-        if (null !== $this->lbs) {
-            $res['lbs'] = $this->lbs;
-        }
-        if (null !== $this->role) {
-            $res['role'] = $this->role;
-        }
-        if (null !== $this->activityInfo) {
-            $res['activity_info'] = $this->activityInfo;
-        }
-        if (null !== $this->purchaseQueryModel) {
-            $res['purchase_query_model'] = null !== $this->purchaseQueryModel ? $this->purchaseQueryModel->toMap() : null;
-        }
-        if (null !== $this->scalperQueryModel) {
-            $res['scalper_query_model'] = null !== $this->scalperQueryModel ? $this->scalperQueryModel->toMap() : null;
-        }
-        if (null !== $this->awardingQueryModel) {
-            $res['awarding_query_model'] = null !== $this->awardingQueryModel ? $this->awardingQueryModel->toMap() : null;
-        }
-        if (null !== $this->farmingQueryModel) {
-            $res['farming_query_model'] = null !== $this->farmingQueryModel ? $this->farmingQueryModel->toMap() : null;
-        }
-        if (null !== $this->baddebtQueryModel) {
-            $res['baddebt_query_model'] = null !== $this->baddebtQueryModel ? $this->baddebtQueryModel->toMap() : null;
-        }
-        if (null !== $this->merchantAppId) {
-            $res['merchant_app_id'] = $this->merchantAppId;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return QueryRiskGoRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['risk_type'])) {
-            $model->riskType = $map['risk_type'];
-        }
-        if (isset($map['flow_id'])) {
-            $model->flowId = $map['flow_id'];
-        }
-        if (isset($map['business_code'])) {
-            $model->businessCode = $map['business_code'];
-        }
-        if (isset($map['scene'])) {
-            $model->scene = $map['scene'];
-        }
-        if (isset($map['user_id'])) {
-            $model->userId = $map['user_id'];
-        }
-        if (isset($map['open_id'])) {
-            $model->openId = $map['open_id'];
-        }
-        if (isset($map['mer_pid'])) {
-            $model->merPid = $map['mer_pid'];
-        }
-        if (isset($map['mobile_no'])) {
-            $model->mobileNo = $map['mobile_no'];
-        }
-        if (isset($map['cert_no'])) {
-            $model->certNo = $map['cert_no'];
-        }
-        if (isset($map['ip'])) {
-            $model->ip = $map['ip'];
-        }
-        if (isset($map['lbs'])) {
-            $model->lbs = $map['lbs'];
-        }
-        if (isset($map['role'])) {
-            $model->role = $map['role'];
-        }
-        if (isset($map['activity_info'])) {
-            $model->activityInfo = $map['activity_info'];
-        }
-        if (isset($map['purchase_query_model'])) {
-            $model->purchaseQueryModel = PurchaseQueryModel::fromMap($map['purchase_query_model']);
-        }
-        if (isset($map['scalper_query_model'])) {
-            $model->scalperQueryModel = ScalperQueryModel::fromMap($map['scalper_query_model']);
-        }
-        if (isset($map['awarding_query_model'])) {
-            $model->awardingQueryModel = AwardingQueryModel::fromMap($map['awarding_query_model']);
-        }
-        if (isset($map['farming_query_model'])) {
-            $model->farmingQueryModel = FarmingQueryModel::fromMap($map['farming_query_model']);
-        }
-        if (isset($map['baddebt_query_model'])) {
-            $model->baddebtQueryModel = BaddebtQueryModel::fromMap($map['baddebt_query_model']);
-        }
-        if (isset($map['merchant_app_id'])) {
-            $model->merchantAppId = $map['merchant_app_id'];
-        }
-
-        return $model;
-    }
 }

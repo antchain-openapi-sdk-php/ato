@@ -1,13 +1,82 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\ATO\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryInnerWithholdsignResponse extends Model
-{
+class QueryInnerWithholdsignResponse extends Model {
+    protected $_name = [
+        'reqMsgId' => 'req_msg_id',
+        'resultCode' => 'result_code',
+        'resultMsg' => 'result_msg',
+        'status' => 'status',
+        'agreementNo' => 'agreement_no',
+        'signTime' => 'sign_time',
+        'validTime' => 'valid_time',
+        'invalidTime' => 'invalid_time',
+    ];
+    public function validate() {}
+    public function toMap() {
+        $res = [];
+        if (null !== $this->reqMsgId) {
+            $res['req_msg_id'] = $this->reqMsgId;
+        }
+        if (null !== $this->resultCode) {
+            $res['result_code'] = $this->resultCode;
+        }
+        if (null !== $this->resultMsg) {
+            $res['result_msg'] = $this->resultMsg;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
+        }
+        if (null !== $this->agreementNo) {
+            $res['agreement_no'] = $this->agreementNo;
+        }
+        if (null !== $this->signTime) {
+            $res['sign_time'] = $this->signTime;
+        }
+        if (null !== $this->validTime) {
+            $res['valid_time'] = $this->validTime;
+        }
+        if (null !== $this->invalidTime) {
+            $res['invalid_time'] = $this->invalidTime;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return QueryInnerWithholdsignResponse
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['req_msg_id'])){
+            $model->reqMsgId = $map['req_msg_id'];
+        }
+        if(isset($map['result_code'])){
+            $model->resultCode = $map['result_code'];
+        }
+        if(isset($map['result_msg'])){
+            $model->resultMsg = $map['result_msg'];
+        }
+        if(isset($map['status'])){
+            $model->status = $map['status'];
+        }
+        if(isset($map['agreement_no'])){
+            $model->agreementNo = $map['agreement_no'];
+        }
+        if(isset($map['sign_time'])){
+            $model->signTime = $map['sign_time'];
+        }
+        if(isset($map['valid_time'])){
+            $model->validTime = $map['valid_time'];
+        }
+        if(isset($map['invalid_time'])){
+            $model->invalidTime = $map['invalid_time'];
+        }
+        return $model;
+    }
     // 请求唯一ID，用于链路跟踪和问题排查
     /**
      * @var string
@@ -63,85 +132,5 @@ class QueryInnerWithholdsignResponse extends Model
      * @var string
      */
     public $invalidTime;
-    protected $_name = [
-        'reqMsgId'    => 'req_msg_id',
-        'resultCode'  => 'result_code',
-        'resultMsg'   => 'result_msg',
-        'status'      => 'status',
-        'agreementNo' => 'agreement_no',
-        'signTime'    => 'sign_time',
-        'validTime'   => 'valid_time',
-        'invalidTime' => 'invalid_time',
-    ];
 
-    public function validate()
-    {
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->reqMsgId) {
-            $res['req_msg_id'] = $this->reqMsgId;
-        }
-        if (null !== $this->resultCode) {
-            $res['result_code'] = $this->resultCode;
-        }
-        if (null !== $this->resultMsg) {
-            $res['result_msg'] = $this->resultMsg;
-        }
-        if (null !== $this->status) {
-            $res['status'] = $this->status;
-        }
-        if (null !== $this->agreementNo) {
-            $res['agreement_no'] = $this->agreementNo;
-        }
-        if (null !== $this->signTime) {
-            $res['sign_time'] = $this->signTime;
-        }
-        if (null !== $this->validTime) {
-            $res['valid_time'] = $this->validTime;
-        }
-        if (null !== $this->invalidTime) {
-            $res['invalid_time'] = $this->invalidTime;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return QueryInnerWithholdsignResponse
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['req_msg_id'])) {
-            $model->reqMsgId = $map['req_msg_id'];
-        }
-        if (isset($map['result_code'])) {
-            $model->resultCode = $map['result_code'];
-        }
-        if (isset($map['result_msg'])) {
-            $model->resultMsg = $map['result_msg'];
-        }
-        if (isset($map['status'])) {
-            $model->status = $map['status'];
-        }
-        if (isset($map['agreement_no'])) {
-            $model->agreementNo = $map['agreement_no'];
-        }
-        if (isset($map['sign_time'])) {
-            $model->signTime = $map['sign_time'];
-        }
-        if (isset($map['valid_time'])) {
-            $model->validTime = $map['valid_time'];
-        }
-        if (isset($map['invalid_time'])) {
-            $model->invalidTime = $map['invalid_time'];
-        }
-
-        return $model;
-    }
 }

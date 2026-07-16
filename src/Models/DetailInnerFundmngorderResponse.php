@@ -1,13 +1,283 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\ATO\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class DetailInnerFundmngorderResponse extends Model
-{
+use AntChain\ATO\Models\OrderInfo;
+use AntChain\ATO\Models\OrderLogisticInfo;
+use AntChain\ATO\Models\OrderUserInfo;
+use AntChain\ATO\Models\OrderFinanceInfo;
+use AntChain\ATO\Models\OrderFulfillmentInfo;
+use AntChain\ATO\Models\OrderRepayStrategy;
+use AntChain\ATO\Models\OrderProductInfo;
+use AntChain\ATO\Models\OrderContractInfo;
+use AntChain\ATO\Models\OrderWithholdContractInfo;
+use AntChain\ATO\Models\InnerCreditInfo;
+use AntChain\ATO\Models\MerchantOrderRepayStrategy;
+use AntChain\ATO\Models\MerchantOrderFulfillmentInfo;
+use AntChain\ATO\Models\FundMngLoanApplyResult;
+use AntChain\ATO\Models\MerchantPerformanceRedeemInfo;
+use AntChain\ATO\Models\MerchantPerformanceRepaySupportInfo;
+
+class DetailInnerFundmngorderResponse extends Model {
+    protected $_name = [
+        'reqMsgId' => 'req_msg_id',
+        'resultCode' => 'result_code',
+        'resultMsg' => 'result_msg',
+        'orderId' => 'order_id',
+        'orderInfo' => 'order_info',
+        'orderLogisticInfoList' => 'order_logistic_info_list',
+        'orderUserInfo' => 'order_user_info',
+        'orderFinanceInfo' => 'order_finance_info',
+        'orderFulfillmentInfoList' => 'order_fulfillment_info_list',
+        'orderPromiseInfo' => 'order_promise_info',
+        'orderProductInfoList' => 'order_product_info_list',
+        'orderContractInfoList' => 'order_contract_info_list',
+        'orderWithholdContractInfo' => 'order_withhold_contract_info',
+        'orderCreditInfo' => 'order_credit_info',
+        'merchantOrderRepayStrategy' => 'merchant_order_repay_strategy',
+        'merchantOrderFulfillmentInfo' => 'merchant_order_fulfillment_info',
+        'fundMngLoanApplayResult' => 'fund_mng_loan_applay_result',
+        'merchantPerformanceRedeemInfo' => 'merchant_performance_redeem_info',
+        'merchantPerformanceRepaySupportInfo' => 'merchant_performance_repay_support_info',
+    ];
+    public function validate() {}
+    public function toMap() {
+        $res = [];
+        if (null !== $this->reqMsgId) {
+            $res['req_msg_id'] = $this->reqMsgId;
+        }
+        if (null !== $this->resultCode) {
+            $res['result_code'] = $this->resultCode;
+        }
+        if (null !== $this->resultMsg) {
+            $res['result_msg'] = $this->resultMsg;
+        }
+        if (null !== $this->orderId) {
+            $res['order_id'] = $this->orderId;
+        }
+        if (null !== $this->orderInfo) {
+            $res['order_info'] = null !== $this->orderInfo ? $this->orderInfo->toMap() : null;
+        }
+        if (null !== $this->orderLogisticInfoList) {
+            $res['order_logistic_info_list'] = [];
+            if(null !== $this->orderLogisticInfoList && is_array($this->orderLogisticInfoList)){
+                $n = 0;
+                foreach($this->orderLogisticInfoList as $item){
+                    $res['order_logistic_info_list'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->orderUserInfo) {
+            $res['order_user_info'] = null !== $this->orderUserInfo ? $this->orderUserInfo->toMap() : null;
+        }
+        if (null !== $this->orderFinanceInfo) {
+            $res['order_finance_info'] = null !== $this->orderFinanceInfo ? $this->orderFinanceInfo->toMap() : null;
+        }
+        if (null !== $this->orderFulfillmentInfoList) {
+            $res['order_fulfillment_info_list'] = [];
+            if(null !== $this->orderFulfillmentInfoList && is_array($this->orderFulfillmentInfoList)){
+                $n = 0;
+                foreach($this->orderFulfillmentInfoList as $item){
+                    $res['order_fulfillment_info_list'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->orderPromiseInfo) {
+            $res['order_promise_info'] = [];
+            if(null !== $this->orderPromiseInfo && is_array($this->orderPromiseInfo)){
+                $n = 0;
+                foreach($this->orderPromiseInfo as $item){
+                    $res['order_promise_info'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->orderProductInfoList) {
+            $res['order_product_info_list'] = [];
+            if(null !== $this->orderProductInfoList && is_array($this->orderProductInfoList)){
+                $n = 0;
+                foreach($this->orderProductInfoList as $item){
+                    $res['order_product_info_list'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->orderContractInfoList) {
+            $res['order_contract_info_list'] = [];
+            if(null !== $this->orderContractInfoList && is_array($this->orderContractInfoList)){
+                $n = 0;
+                foreach($this->orderContractInfoList as $item){
+                    $res['order_contract_info_list'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->orderWithholdContractInfo) {
+            $res['order_withhold_contract_info'] = null !== $this->orderWithholdContractInfo ? $this->orderWithholdContractInfo->toMap() : null;
+        }
+        if (null !== $this->orderCreditInfo) {
+            $res['order_credit_info'] = [];
+            if(null !== $this->orderCreditInfo && is_array($this->orderCreditInfo)){
+                $n = 0;
+                foreach($this->orderCreditInfo as $item){
+                    $res['order_credit_info'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->merchantOrderRepayStrategy) {
+            $res['merchant_order_repay_strategy'] = [];
+            if(null !== $this->merchantOrderRepayStrategy && is_array($this->merchantOrderRepayStrategy)){
+                $n = 0;
+                foreach($this->merchantOrderRepayStrategy as $item){
+                    $res['merchant_order_repay_strategy'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->merchantOrderFulfillmentInfo) {
+            $res['merchant_order_fulfillment_info'] = [];
+            if(null !== $this->merchantOrderFulfillmentInfo && is_array($this->merchantOrderFulfillmentInfo)){
+                $n = 0;
+                foreach($this->merchantOrderFulfillmentInfo as $item){
+                    $res['merchant_order_fulfillment_info'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->fundMngLoanApplayResult) {
+            $res['fund_mng_loan_applay_result'] = null !== $this->fundMngLoanApplayResult ? $this->fundMngLoanApplayResult->toMap() : null;
+        }
+        if (null !== $this->merchantPerformanceRedeemInfo) {
+            $res['merchant_performance_redeem_info'] = null !== $this->merchantPerformanceRedeemInfo ? $this->merchantPerformanceRedeemInfo->toMap() : null;
+        }
+        if (null !== $this->merchantPerformanceRepaySupportInfo) {
+            $res['merchant_performance_repay_support_info'] = [];
+            if(null !== $this->merchantPerformanceRepaySupportInfo && is_array($this->merchantPerformanceRepaySupportInfo)){
+                $n = 0;
+                foreach($this->merchantPerformanceRepaySupportInfo as $item){
+                    $res['merchant_performance_repay_support_info'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return DetailInnerFundmngorderResponse
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['req_msg_id'])){
+            $model->reqMsgId = $map['req_msg_id'];
+        }
+        if(isset($map['result_code'])){
+            $model->resultCode = $map['result_code'];
+        }
+        if(isset($map['result_msg'])){
+            $model->resultMsg = $map['result_msg'];
+        }
+        if(isset($map['order_id'])){
+            $model->orderId = $map['order_id'];
+        }
+        if(isset($map['order_info'])){
+            $model->orderInfo = OrderInfo::fromMap($map['order_info']);
+        }
+        if(isset($map['order_logistic_info_list'])){
+            if(!empty($map['order_logistic_info_list'])){
+                $model->orderLogisticInfoList = [];
+                $n = 0;
+                foreach($map['order_logistic_info_list'] as $item) {
+                    $model->orderLogisticInfoList[$n++] = null !== $item ? OrderLogisticInfo::fromMap($item) : $item;
+                }
+            }
+        }
+        if(isset($map['order_user_info'])){
+            $model->orderUserInfo = OrderUserInfo::fromMap($map['order_user_info']);
+        }
+        if(isset($map['order_finance_info'])){
+            $model->orderFinanceInfo = OrderFinanceInfo::fromMap($map['order_finance_info']);
+        }
+        if(isset($map['order_fulfillment_info_list'])){
+            if(!empty($map['order_fulfillment_info_list'])){
+                $model->orderFulfillmentInfoList = [];
+                $n = 0;
+                foreach($map['order_fulfillment_info_list'] as $item) {
+                    $model->orderFulfillmentInfoList[$n++] = null !== $item ? OrderFulfillmentInfo::fromMap($item) : $item;
+                }
+            }
+        }
+        if(isset($map['order_promise_info'])){
+            if(!empty($map['order_promise_info'])){
+                $model->orderPromiseInfo = [];
+                $n = 0;
+                foreach($map['order_promise_info'] as $item) {
+                    $model->orderPromiseInfo[$n++] = null !== $item ? OrderRepayStrategy::fromMap($item) : $item;
+                }
+            }
+        }
+        if(isset($map['order_product_info_list'])){
+            if(!empty($map['order_product_info_list'])){
+                $model->orderProductInfoList = [];
+                $n = 0;
+                foreach($map['order_product_info_list'] as $item) {
+                    $model->orderProductInfoList[$n++] = null !== $item ? OrderProductInfo::fromMap($item) : $item;
+                }
+            }
+        }
+        if(isset($map['order_contract_info_list'])){
+            if(!empty($map['order_contract_info_list'])){
+                $model->orderContractInfoList = [];
+                $n = 0;
+                foreach($map['order_contract_info_list'] as $item) {
+                    $model->orderContractInfoList[$n++] = null !== $item ? OrderContractInfo::fromMap($item) : $item;
+                }
+            }
+        }
+        if(isset($map['order_withhold_contract_info'])){
+            $model->orderWithholdContractInfo = OrderWithholdContractInfo::fromMap($map['order_withhold_contract_info']);
+        }
+        if(isset($map['order_credit_info'])){
+            if(!empty($map['order_credit_info'])){
+                $model->orderCreditInfo = [];
+                $n = 0;
+                foreach($map['order_credit_info'] as $item) {
+                    $model->orderCreditInfo[$n++] = null !== $item ? InnerCreditInfo::fromMap($item) : $item;
+                }
+            }
+        }
+        if(isset($map['merchant_order_repay_strategy'])){
+            if(!empty($map['merchant_order_repay_strategy'])){
+                $model->merchantOrderRepayStrategy = [];
+                $n = 0;
+                foreach($map['merchant_order_repay_strategy'] as $item) {
+                    $model->merchantOrderRepayStrategy[$n++] = null !== $item ? MerchantOrderRepayStrategy::fromMap($item) : $item;
+                }
+            }
+        }
+        if(isset($map['merchant_order_fulfillment_info'])){
+            if(!empty($map['merchant_order_fulfillment_info'])){
+                $model->merchantOrderFulfillmentInfo = [];
+                $n = 0;
+                foreach($map['merchant_order_fulfillment_info'] as $item) {
+                    $model->merchantOrderFulfillmentInfo[$n++] = null !== $item ? MerchantOrderFulfillmentInfo::fromMap($item) : $item;
+                }
+            }
+        }
+        if(isset($map['fund_mng_loan_applay_result'])){
+            $model->fundMngLoanApplayResult = FundMngLoanApplyResult::fromMap($map['fund_mng_loan_applay_result']);
+        }
+        if(isset($map['merchant_performance_redeem_info'])){
+            $model->merchantPerformanceRedeemInfo = MerchantPerformanceRedeemInfo::fromMap($map['merchant_performance_redeem_info']);
+        }
+        if(isset($map['merchant_performance_repay_support_info'])){
+            if(!empty($map['merchant_performance_repay_support_info'])){
+                $model->merchantPerformanceRepaySupportInfo = [];
+                $n = 0;
+                foreach($map['merchant_performance_repay_support_info'] as $item) {
+                    $model->merchantPerformanceRepaySupportInfo[$n++] = null !== $item ? MerchantPerformanceRepaySupportInfo::fromMap($item) : $item;
+                }
+            }
+        }
+        return $model;
+    }
     // 请求唯一ID，用于链路跟踪和问题排查
     /**
      * @var string
@@ -121,270 +391,5 @@ class DetailInnerFundmngorderResponse extends Model
      * @var MerchantPerformanceRepaySupportInfo[]
      */
     public $merchantPerformanceRepaySupportInfo;
-    protected $_name = [
-        'reqMsgId'                            => 'req_msg_id',
-        'resultCode'                          => 'result_code',
-        'resultMsg'                           => 'result_msg',
-        'orderId'                             => 'order_id',
-        'orderInfo'                           => 'order_info',
-        'orderLogisticInfoList'               => 'order_logistic_info_list',
-        'orderUserInfo'                       => 'order_user_info',
-        'orderFinanceInfo'                    => 'order_finance_info',
-        'orderFulfillmentInfoList'            => 'order_fulfillment_info_list',
-        'orderPromiseInfo'                    => 'order_promise_info',
-        'orderProductInfoList'                => 'order_product_info_list',
-        'orderContractInfoList'               => 'order_contract_info_list',
-        'orderWithholdContractInfo'           => 'order_withhold_contract_info',
-        'orderCreditInfo'                     => 'order_credit_info',
-        'merchantOrderRepayStrategy'          => 'merchant_order_repay_strategy',
-        'merchantOrderFulfillmentInfo'        => 'merchant_order_fulfillment_info',
-        'fundMngLoanApplayResult'             => 'fund_mng_loan_applay_result',
-        'merchantPerformanceRedeemInfo'       => 'merchant_performance_redeem_info',
-        'merchantPerformanceRepaySupportInfo' => 'merchant_performance_repay_support_info',
-    ];
 
-    public function validate()
-    {
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->reqMsgId) {
-            $res['req_msg_id'] = $this->reqMsgId;
-        }
-        if (null !== $this->resultCode) {
-            $res['result_code'] = $this->resultCode;
-        }
-        if (null !== $this->resultMsg) {
-            $res['result_msg'] = $this->resultMsg;
-        }
-        if (null !== $this->orderId) {
-            $res['order_id'] = $this->orderId;
-        }
-        if (null !== $this->orderInfo) {
-            $res['order_info'] = null !== $this->orderInfo ? $this->orderInfo->toMap() : null;
-        }
-        if (null !== $this->orderLogisticInfoList) {
-            $res['order_logistic_info_list'] = [];
-            if (null !== $this->orderLogisticInfoList && \is_array($this->orderLogisticInfoList)) {
-                $n = 0;
-                foreach ($this->orderLogisticInfoList as $item) {
-                    $res['order_logistic_info_list'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->orderUserInfo) {
-            $res['order_user_info'] = null !== $this->orderUserInfo ? $this->orderUserInfo->toMap() : null;
-        }
-        if (null !== $this->orderFinanceInfo) {
-            $res['order_finance_info'] = null !== $this->orderFinanceInfo ? $this->orderFinanceInfo->toMap() : null;
-        }
-        if (null !== $this->orderFulfillmentInfoList) {
-            $res['order_fulfillment_info_list'] = [];
-            if (null !== $this->orderFulfillmentInfoList && \is_array($this->orderFulfillmentInfoList)) {
-                $n = 0;
-                foreach ($this->orderFulfillmentInfoList as $item) {
-                    $res['order_fulfillment_info_list'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->orderPromiseInfo) {
-            $res['order_promise_info'] = [];
-            if (null !== $this->orderPromiseInfo && \is_array($this->orderPromiseInfo)) {
-                $n = 0;
-                foreach ($this->orderPromiseInfo as $item) {
-                    $res['order_promise_info'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->orderProductInfoList) {
-            $res['order_product_info_list'] = [];
-            if (null !== $this->orderProductInfoList && \is_array($this->orderProductInfoList)) {
-                $n = 0;
-                foreach ($this->orderProductInfoList as $item) {
-                    $res['order_product_info_list'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->orderContractInfoList) {
-            $res['order_contract_info_list'] = [];
-            if (null !== $this->orderContractInfoList && \is_array($this->orderContractInfoList)) {
-                $n = 0;
-                foreach ($this->orderContractInfoList as $item) {
-                    $res['order_contract_info_list'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->orderWithholdContractInfo) {
-            $res['order_withhold_contract_info'] = null !== $this->orderWithholdContractInfo ? $this->orderWithholdContractInfo->toMap() : null;
-        }
-        if (null !== $this->orderCreditInfo) {
-            $res['order_credit_info'] = [];
-            if (null !== $this->orderCreditInfo && \is_array($this->orderCreditInfo)) {
-                $n = 0;
-                foreach ($this->orderCreditInfo as $item) {
-                    $res['order_credit_info'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->merchantOrderRepayStrategy) {
-            $res['merchant_order_repay_strategy'] = [];
-            if (null !== $this->merchantOrderRepayStrategy && \is_array($this->merchantOrderRepayStrategy)) {
-                $n = 0;
-                foreach ($this->merchantOrderRepayStrategy as $item) {
-                    $res['merchant_order_repay_strategy'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->merchantOrderFulfillmentInfo) {
-            $res['merchant_order_fulfillment_info'] = [];
-            if (null !== $this->merchantOrderFulfillmentInfo && \is_array($this->merchantOrderFulfillmentInfo)) {
-                $n = 0;
-                foreach ($this->merchantOrderFulfillmentInfo as $item) {
-                    $res['merchant_order_fulfillment_info'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-        if (null !== $this->fundMngLoanApplayResult) {
-            $res['fund_mng_loan_applay_result'] = null !== $this->fundMngLoanApplayResult ? $this->fundMngLoanApplayResult->toMap() : null;
-        }
-        if (null !== $this->merchantPerformanceRedeemInfo) {
-            $res['merchant_performance_redeem_info'] = null !== $this->merchantPerformanceRedeemInfo ? $this->merchantPerformanceRedeemInfo->toMap() : null;
-        }
-        if (null !== $this->merchantPerformanceRepaySupportInfo) {
-            $res['merchant_performance_repay_support_info'] = [];
-            if (null !== $this->merchantPerformanceRepaySupportInfo && \is_array($this->merchantPerformanceRepaySupportInfo)) {
-                $n = 0;
-                foreach ($this->merchantPerformanceRepaySupportInfo as $item) {
-                    $res['merchant_performance_repay_support_info'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return DetailInnerFundmngorderResponse
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['req_msg_id'])) {
-            $model->reqMsgId = $map['req_msg_id'];
-        }
-        if (isset($map['result_code'])) {
-            $model->resultCode = $map['result_code'];
-        }
-        if (isset($map['result_msg'])) {
-            $model->resultMsg = $map['result_msg'];
-        }
-        if (isset($map['order_id'])) {
-            $model->orderId = $map['order_id'];
-        }
-        if (isset($map['order_info'])) {
-            $model->orderInfo = OrderInfo::fromMap($map['order_info']);
-        }
-        if (isset($map['order_logistic_info_list'])) {
-            if (!empty($map['order_logistic_info_list'])) {
-                $model->orderLogisticInfoList = [];
-                $n                            = 0;
-                foreach ($map['order_logistic_info_list'] as $item) {
-                    $model->orderLogisticInfoList[$n++] = null !== $item ? OrderLogisticInfo::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['order_user_info'])) {
-            $model->orderUserInfo = OrderUserInfo::fromMap($map['order_user_info']);
-        }
-        if (isset($map['order_finance_info'])) {
-            $model->orderFinanceInfo = OrderFinanceInfo::fromMap($map['order_finance_info']);
-        }
-        if (isset($map['order_fulfillment_info_list'])) {
-            if (!empty($map['order_fulfillment_info_list'])) {
-                $model->orderFulfillmentInfoList = [];
-                $n                               = 0;
-                foreach ($map['order_fulfillment_info_list'] as $item) {
-                    $model->orderFulfillmentInfoList[$n++] = null !== $item ? OrderFulfillmentInfo::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['order_promise_info'])) {
-            if (!empty($map['order_promise_info'])) {
-                $model->orderPromiseInfo = [];
-                $n                       = 0;
-                foreach ($map['order_promise_info'] as $item) {
-                    $model->orderPromiseInfo[$n++] = null !== $item ? OrderRepayStrategy::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['order_product_info_list'])) {
-            if (!empty($map['order_product_info_list'])) {
-                $model->orderProductInfoList = [];
-                $n                           = 0;
-                foreach ($map['order_product_info_list'] as $item) {
-                    $model->orderProductInfoList[$n++] = null !== $item ? OrderProductInfo::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['order_contract_info_list'])) {
-            if (!empty($map['order_contract_info_list'])) {
-                $model->orderContractInfoList = [];
-                $n                            = 0;
-                foreach ($map['order_contract_info_list'] as $item) {
-                    $model->orderContractInfoList[$n++] = null !== $item ? OrderContractInfo::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['order_withhold_contract_info'])) {
-            $model->orderWithholdContractInfo = OrderWithholdContractInfo::fromMap($map['order_withhold_contract_info']);
-        }
-        if (isset($map['order_credit_info'])) {
-            if (!empty($map['order_credit_info'])) {
-                $model->orderCreditInfo = [];
-                $n                      = 0;
-                foreach ($map['order_credit_info'] as $item) {
-                    $model->orderCreditInfo[$n++] = null !== $item ? InnerCreditInfo::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['merchant_order_repay_strategy'])) {
-            if (!empty($map['merchant_order_repay_strategy'])) {
-                $model->merchantOrderRepayStrategy = [];
-                $n                                 = 0;
-                foreach ($map['merchant_order_repay_strategy'] as $item) {
-                    $model->merchantOrderRepayStrategy[$n++] = null !== $item ? MerchantOrderRepayStrategy::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['merchant_order_fulfillment_info'])) {
-            if (!empty($map['merchant_order_fulfillment_info'])) {
-                $model->merchantOrderFulfillmentInfo = [];
-                $n                                   = 0;
-                foreach ($map['merchant_order_fulfillment_info'] as $item) {
-                    $model->merchantOrderFulfillmentInfo[$n++] = null !== $item ? MerchantOrderFulfillmentInfo::fromMap($item) : $item;
-                }
-            }
-        }
-        if (isset($map['fund_mng_loan_applay_result'])) {
-            $model->fundMngLoanApplayResult = FundMngLoanApplyResult::fromMap($map['fund_mng_loan_applay_result']);
-        }
-        if (isset($map['merchant_performance_redeem_info'])) {
-            $model->merchantPerformanceRedeemInfo = MerchantPerformanceRedeemInfo::fromMap($map['merchant_performance_redeem_info']);
-        }
-        if (isset($map['merchant_performance_repay_support_info'])) {
-            if (!empty($map['merchant_performance_repay_support_info'])) {
-                $model->merchantPerformanceRepaySupportInfo = [];
-                $n                                          = 0;
-                foreach ($map['merchant_performance_repay_support_info'] as $item) {
-                    $model->merchantPerformanceRepaySupportInfo[$n++] = null !== $item ? MerchantPerformanceRepaySupportInfo::fromMap($item) : $item;
-                }
-            }
-        }
-
-        return $model;
-    }
 }

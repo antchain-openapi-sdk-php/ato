@@ -1,13 +1,124 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\ATO\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryJdFunddividerelationResponse extends Model
-{
+use AntChain\ATO\Models\FileInfo;
+
+class QueryJdFunddividerelationResponse extends Model {
+    protected $_name = [
+        'reqMsgId' => 'req_msg_id',
+        'resultCode' => 'result_code',
+        'resultMsg' => 'result_msg',
+        'subjectCompanyName' => 'subject_company_name',
+        'divideTenantId' => 'divide_tenant_id',
+        'divideMerchantId' => 'divide_merchant_id',
+        'divideCompanyName' => 'divide_company_name',
+        'relationStatus' => 'relation_status',
+        'divideJdMerchantNo' => 'divide_jd_merchant_no',
+        'desc' => 'desc',
+        'failReason' => 'fail_reason',
+        'contractFiles' => 'contract_files',
+    ];
+    public function validate() {}
+    public function toMap() {
+        $res = [];
+        if (null !== $this->reqMsgId) {
+            $res['req_msg_id'] = $this->reqMsgId;
+        }
+        if (null !== $this->resultCode) {
+            $res['result_code'] = $this->resultCode;
+        }
+        if (null !== $this->resultMsg) {
+            $res['result_msg'] = $this->resultMsg;
+        }
+        if (null !== $this->subjectCompanyName) {
+            $res['subject_company_name'] = $this->subjectCompanyName;
+        }
+        if (null !== $this->divideTenantId) {
+            $res['divide_tenant_id'] = $this->divideTenantId;
+        }
+        if (null !== $this->divideMerchantId) {
+            $res['divide_merchant_id'] = $this->divideMerchantId;
+        }
+        if (null !== $this->divideCompanyName) {
+            $res['divide_company_name'] = $this->divideCompanyName;
+        }
+        if (null !== $this->relationStatus) {
+            $res['relation_status'] = $this->relationStatus;
+        }
+        if (null !== $this->divideJdMerchantNo) {
+            $res['divide_jd_merchant_no'] = $this->divideJdMerchantNo;
+        }
+        if (null !== $this->desc) {
+            $res['desc'] = $this->desc;
+        }
+        if (null !== $this->failReason) {
+            $res['fail_reason'] = $this->failReason;
+        }
+        if (null !== $this->contractFiles) {
+            $res['contract_files'] = [];
+            if(null !== $this->contractFiles && is_array($this->contractFiles)){
+                $n = 0;
+                foreach($this->contractFiles as $item){
+                    $res['contract_files'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return QueryJdFunddividerelationResponse
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['req_msg_id'])){
+            $model->reqMsgId = $map['req_msg_id'];
+        }
+        if(isset($map['result_code'])){
+            $model->resultCode = $map['result_code'];
+        }
+        if(isset($map['result_msg'])){
+            $model->resultMsg = $map['result_msg'];
+        }
+        if(isset($map['subject_company_name'])){
+            $model->subjectCompanyName = $map['subject_company_name'];
+        }
+        if(isset($map['divide_tenant_id'])){
+            $model->divideTenantId = $map['divide_tenant_id'];
+        }
+        if(isset($map['divide_merchant_id'])){
+            $model->divideMerchantId = $map['divide_merchant_id'];
+        }
+        if(isset($map['divide_company_name'])){
+            $model->divideCompanyName = $map['divide_company_name'];
+        }
+        if(isset($map['relation_status'])){
+            $model->relationStatus = $map['relation_status'];
+        }
+        if(isset($map['divide_jd_merchant_no'])){
+            $model->divideJdMerchantNo = $map['divide_jd_merchant_no'];
+        }
+        if(isset($map['desc'])){
+            $model->desc = $map['desc'];
+        }
+        if(isset($map['fail_reason'])){
+            $model->failReason = $map['fail_reason'];
+        }
+        if(isset($map['contract_files'])){
+            if(!empty($map['contract_files'])){
+                $model->contractFiles = [];
+                $n = 0;
+                foreach($map['contract_files'] as $item) {
+                    $model->contractFiles[$n++] = null !== $item ? FileInfo::fromMap($item) : $item;
+                }
+            }
+        }
+        return $model;
+    }
     // 请求唯一ID，用于链路跟踪和问题排查
     /**
      * @var string
@@ -81,125 +192,5 @@ class QueryJdFunddividerelationResponse extends Model
      * @var FileInfo[]
      */
     public $contractFiles;
-    protected $_name = [
-        'reqMsgId'           => 'req_msg_id',
-        'resultCode'         => 'result_code',
-        'resultMsg'          => 'result_msg',
-        'subjectCompanyName' => 'subject_company_name',
-        'divideTenantId'     => 'divide_tenant_id',
-        'divideMerchantId'   => 'divide_merchant_id',
-        'divideCompanyName'  => 'divide_company_name',
-        'relationStatus'     => 'relation_status',
-        'divideJdMerchantNo' => 'divide_jd_merchant_no',
-        'desc'               => 'desc',
-        'failReason'         => 'fail_reason',
-        'contractFiles'      => 'contract_files',
-    ];
 
-    public function validate()
-    {
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->reqMsgId) {
-            $res['req_msg_id'] = $this->reqMsgId;
-        }
-        if (null !== $this->resultCode) {
-            $res['result_code'] = $this->resultCode;
-        }
-        if (null !== $this->resultMsg) {
-            $res['result_msg'] = $this->resultMsg;
-        }
-        if (null !== $this->subjectCompanyName) {
-            $res['subject_company_name'] = $this->subjectCompanyName;
-        }
-        if (null !== $this->divideTenantId) {
-            $res['divide_tenant_id'] = $this->divideTenantId;
-        }
-        if (null !== $this->divideMerchantId) {
-            $res['divide_merchant_id'] = $this->divideMerchantId;
-        }
-        if (null !== $this->divideCompanyName) {
-            $res['divide_company_name'] = $this->divideCompanyName;
-        }
-        if (null !== $this->relationStatus) {
-            $res['relation_status'] = $this->relationStatus;
-        }
-        if (null !== $this->divideJdMerchantNo) {
-            $res['divide_jd_merchant_no'] = $this->divideJdMerchantNo;
-        }
-        if (null !== $this->desc) {
-            $res['desc'] = $this->desc;
-        }
-        if (null !== $this->failReason) {
-            $res['fail_reason'] = $this->failReason;
-        }
-        if (null !== $this->contractFiles) {
-            $res['contract_files'] = [];
-            if (null !== $this->contractFiles && \is_array($this->contractFiles)) {
-                $n = 0;
-                foreach ($this->contractFiles as $item) {
-                    $res['contract_files'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return QueryJdFunddividerelationResponse
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['req_msg_id'])) {
-            $model->reqMsgId = $map['req_msg_id'];
-        }
-        if (isset($map['result_code'])) {
-            $model->resultCode = $map['result_code'];
-        }
-        if (isset($map['result_msg'])) {
-            $model->resultMsg = $map['result_msg'];
-        }
-        if (isset($map['subject_company_name'])) {
-            $model->subjectCompanyName = $map['subject_company_name'];
-        }
-        if (isset($map['divide_tenant_id'])) {
-            $model->divideTenantId = $map['divide_tenant_id'];
-        }
-        if (isset($map['divide_merchant_id'])) {
-            $model->divideMerchantId = $map['divide_merchant_id'];
-        }
-        if (isset($map['divide_company_name'])) {
-            $model->divideCompanyName = $map['divide_company_name'];
-        }
-        if (isset($map['relation_status'])) {
-            $model->relationStatus = $map['relation_status'];
-        }
-        if (isset($map['divide_jd_merchant_no'])) {
-            $model->divideJdMerchantNo = $map['divide_jd_merchant_no'];
-        }
-        if (isset($map['desc'])) {
-            $model->desc = $map['desc'];
-        }
-        if (isset($map['fail_reason'])) {
-            $model->failReason = $map['fail_reason'];
-        }
-        if (isset($map['contract_files'])) {
-            if (!empty($map['contract_files'])) {
-                $model->contractFiles = [];
-                $n                    = 0;
-                foreach ($map['contract_files'] as $item) {
-                    $model->contractFiles[$n++] = null !== $item ? FileInfo::fromMap($item) : $item;
-                }
-            }
-        }
-
-        return $model;
-    }
 }

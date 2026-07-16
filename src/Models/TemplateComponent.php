@@ -1,106 +1,29 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\ATO\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class TemplateComponent extends Model
-{
-    // 模板编码
-    /**
-     * @example T20240805190830044214
-     *
-     * @var string
-     */
-    public $templateCode;
-
-    // 组件（文本域）id
-    /**
-     * @example CP20240521161730006569
-     *
-     * @var string
-     */
-    public $id;
-
-    // 组件（文本域）名称
-    /**
-     * @example companyName
-     *
-     * @var string
-     */
-    public $name;
-
-    // 组件（文本域）的唯一标识
-    /**
-     * @example
-     *
-     * @var string
-     */
-    public $uk;
-
-    // 占位符，组件（文本域）的展示样式值
-    /**
-     * @example 【companyName】
-     *
-     * @var string
-     */
-    public $placeholder;
-
-    // 组件（文本域）是否可以编辑。取值：Y/N
-    /**
-     * @example Y
-     *
-     * @var string
-     */
-    public $enableEdit;
-
-    // 是否必填，取值：Y/N
-    /**
-     * @example N
-     *
-     * @var string
-     */
-    public $required;
-
-    // 组件（文本域）类型，INPUT:单行文本 TEXTAREA:多行文本
-    /**
-     * @example INPUT
-     *
-     * @var string
-     */
-    public $type;
-
-    // 组件（文本域）值
-    /**
-     * @example xx公司
-     *
-     * @var string
-     */
-    public $value;
+class TemplateComponent extends Model {
     protected $_name = [
         'templateCode' => 'template_code',
-        'id'           => 'id',
-        'name'         => 'name',
-        'uk'           => 'uk',
-        'placeholder'  => 'placeholder',
-        'enableEdit'   => 'enable_edit',
-        'required'     => 'required',
-        'type'         => 'type',
-        'value'        => 'value',
+        'id' => 'id',
+        'name' => 'name',
+        'uk' => 'uk',
+        'placeholder' => 'placeholder',
+        'enableEdit' => 'enable_edit',
+        'required' => 'required',
+        'type' => 'type',
+        'value' => 'value',
     ];
-
-    public function validate()
-    {
+    public function validate() {
         Model::validateRequired('templateCode', $this->templateCode, true);
         Model::validateRequired('id', $this->id, true);
         Model::validateRequired('name', $this->name, true);
         Model::validateRequired('value', $this->value, true);
     }
-
-    public function toMap()
-    {
+    public function toMap() {
         $res = [];
         if (null !== $this->templateCode) {
             $res['template_code'] = $this->templateCode;
@@ -129,46 +52,104 @@ class TemplateComponent extends Model
         if (null !== $this->value) {
             $res['value'] = $this->value;
         }
-
         return $res;
     }
-
     /**
      * @param array $map
-     *
      * @return TemplateComponent
      */
-    public static function fromMap($map = [])
-    {
+    public static function fromMap($map = []) {
         $model = new self();
-        if (isset($map['template_code'])) {
+        if(isset($map['template_code'])){
             $model->templateCode = $map['template_code'];
         }
-        if (isset($map['id'])) {
+        if(isset($map['id'])){
             $model->id = $map['id'];
         }
-        if (isset($map['name'])) {
+        if(isset($map['name'])){
             $model->name = $map['name'];
         }
-        if (isset($map['uk'])) {
+        if(isset($map['uk'])){
             $model->uk = $map['uk'];
         }
-        if (isset($map['placeholder'])) {
+        if(isset($map['placeholder'])){
             $model->placeholder = $map['placeholder'];
         }
-        if (isset($map['enable_edit'])) {
+        if(isset($map['enable_edit'])){
             $model->enableEdit = $map['enable_edit'];
         }
-        if (isset($map['required'])) {
+        if(isset($map['required'])){
             $model->required = $map['required'];
         }
-        if (isset($map['type'])) {
+        if(isset($map['type'])){
             $model->type = $map['type'];
         }
-        if (isset($map['value'])) {
+        if(isset($map['value'])){
             $model->value = $map['value'];
         }
-
         return $model;
     }
+    // 模板编码
+    /**
+     * @example T20240805190830044214
+     * @var string
+     */
+    public $templateCode;
+
+    // 组件（文本域）id
+    /**
+     * @example CP20240521161730006569
+     * @var string
+     */
+    public $id;
+
+    // 组件（文本域）名称
+    /**
+     * @example companyName
+     * @var string
+     */
+    public $name;
+
+    // 组件（文本域）的唯一标识
+    /**
+     * @example  
+     * @var string
+     */
+    public $uk;
+
+    // 占位符，组件（文本域）的展示样式值
+    /**
+     * @example 【companyName】
+     * @var string
+     */
+    public $placeholder;
+
+    // 组件（文本域）是否可以编辑。取值：Y/N
+    /**
+     * @example Y
+     * @var string
+     */
+    public $enableEdit;
+
+    // 是否必填，取值：Y/N
+    /**
+     * @example N
+     * @var string
+     */
+    public $required;
+
+    // 组件（文本域）类型，INPUT:单行文本 TEXTAREA:多行文本
+    /**
+     * @example INPUT
+     * @var string
+     */
+    public $type;
+
+    // 组件（文本域）值
+    /**
+     * @example xx公司
+     * @var string
+     */
+    public $value;
+
 }
