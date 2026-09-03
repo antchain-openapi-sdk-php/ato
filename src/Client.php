@@ -825,7 +825,7 @@ class Client {
                     "req_msg_id" => UtilClient::getNonce(),
                     "access_key" => $this->_accessKeyId,
                     "base_sdk_version" => "TeaSDK-2.0",
-                    "sdk_version" => "1.20.6",
+                    "sdk_version" => "1.20.7",
                     "_prod_code" => "ATO",
                     "_prod_channel" => "undefined"
                 ];
@@ -9110,7 +9110,9 @@ class Client {
      * Description: 重要说明：
      *     1. 这个接口是取消订单某一、多期代扣计划中以其他方式还款的金额，取消之后代扣不再执行该期计划。
      *     2. 对通过其他方式还款的第三方单号留存;例如：银行流水号或微信流水号。
-     * Summary: 单期多期代扣取消
+     * Summary: 重要说明：
+     *     1. 这个接口是取消订单某一、多期代扣计划中以其他方式还款的金额，取消之后代扣不再执行该期计划。
+     *     2. 对通过其他方式还款的第三方单号留存;例如：银行流水号或微信流水号。
      * @param RepayWithholdPlanRequest $request
      * @return RepayWithholdPlanResponse
      */
@@ -9124,7 +9126,9 @@ class Client {
      * Description: 重要说明：
      *     1. 这个接口是取消订单某一、多期代扣计划中以其他方式还款的金额，取消之后代扣不再执行该期计划。
      *     2. 对通过其他方式还款的第三方单号留存;例如：银行流水号或微信流水号。
-     * Summary: 单期多期代扣取消
+     * Summary: 重要说明：
+     *     1. 这个接口是取消订单某一、多期代扣计划中以其他方式还款的金额，取消之后代扣不再执行该期计划。
+     *     2. 对通过其他方式还款的第三方单号留存;例如：银行流水号或微信流水号。
      * @param RepayWithholdPlanRequest $request
      * @param string[] $headers
      * @param RuntimeOptions $runtime
